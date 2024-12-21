@@ -1,0 +1,264 @@
+/* Product Display */
+.productMain {
+  display: flex;
+  max-width: 850px;
+  width: 100%;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.productDisplayWrapper:not(.lbx) .productMain:hover {
+  cursor: pointer;
+}
+
+.productMain img {
+  width: 100%;
+  height: 100%;
+}
+
+.productThumbnail {
+  width: 120px;
+  height: 120px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.productMain,
+.productThumbnail {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.thumbnailWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 550px;
+}
+
+.active {
+  border: 3px solid var(--orange);
+  position: relative;
+  overflow: hidden;
+}
+
+.productThumbnail:hover {
+  cursor: pointer;
+}
+.productThumbnail:hover::after,
+.productThumbnail.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-gray-blue);
+  opacity: 70%;
+}
+
+.productDisplayWrapper.lbx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productDisplayWrapper.lbx .productMain {
+  /* max-width: 700px;
+  width: 100%; */
+  margin-bottom: 40px;
+}
+
+.productDisplayWrapper.lbx .thumbnailWrapper {
+  width: 500px;
+  justify-content: center;
+  gap: 15px;
+}
+
+.productDisplayWrapper.lbx .productThumbnail {
+  width: 90px;
+  height: 90px;
+}
+
+/* Product Details */
+.productInfo {
+  align-self: center;
+}
+
+.company {
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 800;
+  letter-spacing: 0.09rem;
+  font-size: 18px;
+}
+
+.product h2 {
+  font-size: 3.5em;
+  margin-top: 20px;
+  color: var(--black);
+}
+
+.product p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.priceWrapper {
+  position: relative;
+}
+
+.price {
+  color: var(--black);
+  font-size: 2.3em;
+  font-weight: 700;
+}
+
+.discount {
+  position: relative;
+  bottom: 5px;
+  display: inline-block;
+  background: rgba(255, 125, 26, 0.1);
+  font-size: 1.4rem;
+  color: var(--orange);
+  font-weight: 800;
+  padding: 5px 15px;
+  border-radius: 12px;
+  margin-left: 20px;
+}
+
+.fullPrice {
+  display: block;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--gray-blue);
+  text-decoration: line-through;
+  margin-top: 10px;
+}
+
+.productDisplayWrapper.lbx .productMobArrowNav {
+  top: 40%;
+  width: 20px;
+  height: 20px;
+}
+
+.productDisplayWrapper.lbx .productMobArrowNav:first-of-type {
+  left: -8%;
+}
+
+.productDisplayWrapper.lbx .productMobArrowNav:last-of-type {
+  right: -8%;
+}
+
+.productDisplayWrapper:not(.lbx) .productMobArrowNav {
+  display: none;
+}
+
+@media (min-width: 2388px) {
+  .productMain {
+    max-width: calc(120px * 4 + 160px);
+  }
+}
+
+@media (max-width: 1210px) {
+  .productDisplayWrapper {
+    margin-left: -50px;
+    margin-right: -50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--gray-blue);
+    position: relative;
+  }
+
+  .thumbnailWrapper {
+    display: none;
+  }
+
+  .productMain {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  .productDisplayWrapper:not(.lbx) .productMobArrowNav {
+    display: block;
+    top: 45%;
+  }
+}
+
+@media (max-width: 640px) {
+  .productMain {
+    height: 400px;
+  }
+
+  .productMain img {
+    object-fit: cover;
+  }
+
+  .productInfo {
+    font-size: 90%;
+  }
+
+  .product h2 {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 468px) {
+  .productDisplayWrapper {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .productMain {
+    height: 300px;
+  }
+
+  .productInfo {
+    font-size: 50%;
+  }
+
+  .company {
+    font-size: 12px;
+  }
+
+  .product h2 {
+    margin: 0.4em 0;
+  }
+
+  .product p {
+    font-size: 16px;
+  }
+
+  .priceWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .priceDiff {
+    flex: 2;
+  }
+
+  .price {
+    font-size: 3em;
+  }
+
+  .discount {
+    margin-left: 15px;
+    bottom: 2.5px;
+    font-size: 1rem;
+  }
+
+  .fullPrice {
+    flex: 1;
+    margin-top: 0;
+    font-size: 2em;
+    display: inline-block;
+    text-align: right;
+  }
+}

@@ -1,0 +1,299 @@
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.navWrapper > * {
+  display: flex;
+}
+
+.navLft {
+  gap: 50px;
+  flex: 2;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+/* Full nav menu */
+.menu {
+  align-self: center;
+}
+
+.menu > ul {
+  display: flex;
+  gap: 30px;
+}
+
+.menu > ul > li > a {
+  font-size: 1.2rem;
+  letter-spacing: 0.02rem;
+  position: relative; /* Add this */
+  display: inline-block; /* Ensures proper dimensions for hover effects */
+}
+
+.menu > ul > li > a:hover::after,
+.menu > ul > li > a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust for better placement */
+  width: 100%;
+  height: 4px;
+  background-color: var(--orange);
+}
+
+/* Mobile nav menu */
+.mobMenu {
+  display: none;
+}
+
+.navRht {
+  justify-content: flex-end;
+  flex: 1;
+  position: relative;
+}
+.loginText {
+  flex-wrap: wrap;
+  display: flex;
+  align-content: center;
+  cursor: pointer;
+}
+
+.logo img,
+.cart img {
+  width: 100%;
+}
+
+.item {
+  padding: 30px 40px;
+}
+
+.cartMenuHeader {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--very-dark-blue);
+  border-bottom: 1px solid var(--gray-blue);
+}
+
+.cartMenuContent {
+  display: flex;
+}
+
+.empty {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 100px auto;
+  display: inline-block;
+}
+
+.cartMenuListItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemImg {
+  display: inline-flex;
+  width: 75px;
+  border-radius: 10%;
+  overflow: hidden;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  gap: 10px;
+}
+
+.itemPrice span {
+  font-weight: 800;
+  margin-left: 10px;
+  color: var(--very-dark-blue);
+}
+
+.itemDelete {
+  width: 20px;
+  align-self: flex-end;
+}
+
+.cartMenuBtnWrapper {
+  padding: 0 40px;
+  margin-bottom: 40px;
+}
+
+.cartMenuBtn {
+  width: 100%;
+  background: var(--orange) !important;
+  padding: 25px;
+  font-size: 1.4rem;
+  color: var(--white);
+  font-weight: 800;
+  border-radius: 10px;
+}
+
+.cartMenuBtn:hover,
+.itemDelete:hover {
+  cursor: pointer;
+}
+
+.cartMenuBtn:hover {
+  opacity: 80%;
+}
+
+.profile {
+  max-width: 40px;
+  width: 40px;
+  height: 40px;
+  width: 100%;
+  border-radius: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.profile:hover {
+  box-shadow: 0 0 0 2px var(--orange);
+}
+
+.profile img,
+.itemImg img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 1211px) {
+  .navWrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1150px) {
+  .menu {
+    display: none;
+  }
+
+  .logo {
+    order: 2;
+  }
+
+  .mobMenu {
+    display: flex;
+    width: 28px;
+    align-items: center;
+  }
+
+  .mobMenu:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1064px) {
+  .navLft {
+    gap: 40px;
+  }
+
+  .cart {
+    max-width: 35px;
+  }
+
+  .menuPanel {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--black);
+  }
+
+  .menuPanel .mob {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navWrapper {
+    padding: 20px 35px;
+    position: relative;
+  }
+
+  .navLft {
+    gap: 25px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mobMenu {
+    width: 20px;
+  }
+
+  .navRht {
+    gap: 30px;
+    position: static;
+  }
+
+  .cart {
+    width: 25px;
+  }
+
+  .profile {
+    width: 40px;
+  }
+
+  .itemInfo {
+    font-size: 4vmin;
+    margin-left: 10px;
+  }
+
+  .empty {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 425px) {
+  .menuPanel {
+    font-size: 1.8rem;
+  }
+
+  .menuPanel .mob {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 375px) {
+  .navWrapper {
+    padding: 15px 20px;
+  }
+
+  .navLft,
+  .navRht {
+    gap: 15px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mobMenu {
+    width: 16px;
+  }
+
+  .profile {
+    width: 30px;
+  }
+
+  .empty {
+    margin-top: 50px;
+  }
+
+  .item {
+    padding: 20px 30px;
+  }
+}

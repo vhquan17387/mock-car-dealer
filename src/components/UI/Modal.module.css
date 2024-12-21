@@ -1,0 +1,63 @@
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: var(--black);
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.overlayContent {
+  position: fixed;
+  left: 50%;
+  max-width: 500px;
+  width: 100%;
+  top: 2%;
+  transform: translateX(-50%);
+}
+
+.overlayContent.mob {
+  left: 0%;
+  max-width: 50%;
+  height: 100%;
+  top: 0%;
+  background: var(--white);
+  transform: none;
+  padding: 40px;
+}
+
+.mob .dismiss {
+  justify-content: flex-start;
+  position: relative;
+  top: 2%;
+  width: 30px;
+  margin-bottom: 100px;
+}
+.dismiss {
+  margin-bottom: 20px;
+  display: inline-flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.dismiss svg {
+  width: 25px;
+  height: 100%;
+}
+
+.dismiss:hover svg path {
+  fill: var(--orange);
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  .overlayContent.mob {
+    padding: 35px;
+  }
+
+  .mob .dismiss {
+    width: 25px;
+    margin-bottom: 70px;
+  }
+}
