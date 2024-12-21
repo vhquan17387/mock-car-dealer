@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import Banner from "../../components/Banner";
 import { Input } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import ProductList from "../../components/ProductList";
 import { oldCars } from "../../helpers/data";
-import MainFilter from "../../components/MainFilter";
 import { old_new } from "../../assets";
+import MainFilter from "../../components/MainFilter";
+import { filterCars } from "../../helpers/utils";
 
 const images = [
   old_new,
@@ -13,14 +14,19 @@ const images = [
 ];
 
 function Home() {
+  const [filter, setFilter] = useState({});
+  const handleOnChange = (value) => {
+    setFilter(value);
+  };
+  const data = useCallback(() => filterCars(oldCars, filter), [filter]);
   return (
     <>
       <Banner images={images} />
       <div style={{ backgroundColor: "#fff", marginTop: 4 }}>
         <Input placeholder="Search" leftSection={<IconSearch stroke={2} />} />
       </div>
-      <MainFilter />
-      <ProductList products={oldCars} />
+      <MainFilter onchange={handleOnChange} />
+      <ProductList products={data()} />
     </>
   );
 }

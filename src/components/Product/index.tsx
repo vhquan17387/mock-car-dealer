@@ -4,11 +4,9 @@ import { Card, Grid, Title } from "@mantine/core";
 import { useParams } from "react-router-dom";
 import useWindowSize from "../../hooks/useWindowSize";
 import { oldCars } from "../../helpers/data";
-import LightBox from "../LightBox";
 import ProductDisplay from "../ProductDisplay";
 import CarDetailsCard from "./CarDetailsCard";
 import VehicleOverview from "./VehicleOverview";
-import { Text } from "@mantine/core";
 import CarCarousel from "../ProductList/CarCarousel";
 export default function Product() {
   // const { isLbShowing = false } = useMyContext(LightboxContext);
@@ -41,7 +39,6 @@ export default function Product() {
       <Grid.Col span={12}>
         <CarCarousel />
       </Grid.Col>
-      {isLbShowing && width >= 1210 && <LightBox />}
       {/* <ProductDisplay /> */}
     </Grid>
   );
