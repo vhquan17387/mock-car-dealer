@@ -1,12 +1,12 @@
 import React from "react";
 import "@mantine/core/styles.css";
 import { Route, Routes } from "react-router-dom";
-import Product from "./components/Product";
 import Home from "./layout/Home";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer";
 import BuyNew from "./layout/BuyNew";
 import SellCar from "./layout/SellCar";
+import Product from "./layout/Product";
 
 function App() {
   return (

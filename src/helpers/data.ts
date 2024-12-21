@@ -53,6 +53,12 @@ export const oldCars = [
 
   <p>If you're looking for a reliable, stylish, and eco-friendly car with low mileage, the Vinfast VF8 is the perfect choice! <strong>Contact us</strong> for more details or to arrange a test drive.</p>
 </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf9-1", // Human-readable ID
@@ -102,6 +108,12 @@ export const oldCars = [
 
   <p>Looking for a spacious, luxurious, and eco-friendly family car? The Vinfast VF9 is your ideal match! <strong>Contact us</strong> for more details or to arrange a test drive.</p>
 </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vfe34-1", // Human-readable ID
@@ -151,10 +163,17 @@ export const oldCars = [
 
   <p>Looking for an eco-friendly, stylish, and efficient electric SUV? The Vinfast VF e34 is the ideal choice! <strong>Contact us</strong> for more details or to arrange a test drive.</p>
 </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf5-1",
-    imageUrl: "https://vinfastauto.com/storage/app/media/model/vf5-orange.jpg", // Replace with valid VF5 image URL
+    imageUrl:
+      "https://danhgiaxevinfast.com/wp-content/uploads/2022/12/0013_vinfast-vf5-1t.jpg", // Replace with valid VF5 image URL
     price: "$30,000",
     installment: "$450/month",
     model: "Vinfast VF5 Plus",
@@ -192,10 +211,17 @@ export const oldCars = [
       </ul>
       <p>💲 <strong>Price:</strong> $30,000</p>
     </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf6-1",
-    imageUrl: "https://vinfastauto.com/storage/app/media/model/vf6-blue.jpg", // Replace with valid VF6 image URL
+    imageUrl:
+      "https://vinfast3sthanhhoa.com/wp-content/uploads/2023/09/vf6-mau-xanh-duong-1-1110x1032-600x600-1.jpg", // Replace with valid VF6 image URL
     price: "$38,000",
     installment: "$520/month",
     model: "Vinfast VF6 Eco",
@@ -233,16 +259,23 @@ export const oldCars = [
       </ul>
       <p>💲 <strong>Price:</strong> $38,000</p>
     </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf9-1",
-    imageUrl: "https://vinfastauto.com/storage/app/media/model/vf9-red.jpg", // Replace with valid VF9 image URL
+    imageUrl:
+      "https://vinfast3sthanhhoa.com/wp-content/uploads/2021/01/z3665738310496_37cabfe17708d435aa75d1e765f294a0.jpg", // Replace with valid VF9 image URL
     price: "$110,000",
     installment: "$1,520/month",
     model: "Vinfast VF9 Plus",
     mileage: "15,200 km",
     owners: "1 Owner",
-    color: "red",
+    color: "white",
     yearlyCost: "$14,910/yr",
     registrationDate: "12 Jan 20",
     yearsLeft: "5yrs left",
@@ -274,16 +307,23 @@ export const oldCars = [
       </ul>
       <p>💲 <strong>Price:</strong> $110,000</p>
     </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf7-1",
-    imageUrl: "https://vinfastauto.com/storage/app/media/model/vf7-white.jpg", // Replace with valid VF7 image URL
+    imageUrl:
+      "https://vinfast3sthanhhoa.com/wp-content/uploads/2023/05/vf7-deep-ocean.webp", // Replace with valid VF7 image URL
     price: "$50,000",
     installment: "$710/month",
     model: "Vinfast VF7 Eco",
     mileage: "9,000 km",
     owners: "1 Owner",
-    color: "white",
+    color: "green",
     yearlyCost: "$8,500/yr",
     registrationDate: "20 Apr 22",
     yearsLeft: "7yrs 4mths left",
@@ -315,16 +355,23 @@ export const oldCars = [
       </ul>
       <p>💲 <strong>Price:</strong> $50,000</p>
     </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf8-plus",
-    imageUrl: "https://vinfastauto.com/storage/app/media/model/vf8-black.jpg", // Replace with valid VF8 image URL
+    imageUrl:
+      "https://vinfast3sthanhhoa.com/wp-content/uploads/2022/01/z3665722408589_a822343b173de28690d528ca318d27f4.jpg", // Replace with valid VF8 image URL
     price: "$85,000",
     installment: "$1,200/month",
     model: "Vinfast VF8 Plus",
     mileage: "5,000 km",
     owners: "1 Owner",
-    color: "black",
+    color: "red",
     yearlyCost: "$10,500/yr",
     registrationDate: "05 Jul 22",
     yearsLeft: "8yrs left",
@@ -356,10 +403,17 @@ export const oldCars = [
       </ul>
       <p>💲 <strong>Price:</strong> $85,000</p>
     </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf6-2",
-    imageUrl: "https://vinfastauto.com/storage/app/media/model/vf6-red.jpg", // Replace with valid VF6 image URL
+    imageUrl:
+      "https://vinfast3sthanhhoa.com/wp-content/uploads/2023/09/vf6-do-1536x864-600x600-1.png", // Replace with valid VF6 image URL
     price: "$40,000",
     installment: "$580/month",
     model: "Vinfast VF6 Plus",
@@ -397,16 +451,23 @@ export const oldCars = [
       </ul>
       <p>💲 <strong>Price:</strong> $40,000</p>
     </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf5-2",
-    imageUrl: "https://vinfastauto.com/storage/app/media/model/vf5-yellow.jpg", // Replace with valid VF5 image URL
+    imageUrl:
+      "https://vinfast3sthanhhoa.com/wp-content/uploads/2022/12/vf5-4.png", // Replace with valid VF5 image URL
     price: "$32,000",
     installment: "$480/month",
     model: "Vinfast VF5 Eco",
     mileage: "9,200 km",
     owners: "1 Owner",
-    color: "yellow",
+    color: "gray",
     yearlyCost: "$7,800/yr",
     registrationDate: "15 Apr 22",
     yearsLeft: "7yrs 6mths left",
@@ -438,16 +499,23 @@ export const oldCars = [
       </ul>
       <p>💲 <strong>Price:</strong> $32,000</p>
     </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf9-2",
-    imageUrl: "https://vinfastauto.com/storage/app/media/model/vf9-white.jpg", // Replace with valid VF9 image URL
+    imageUrl:
+      "https://vinfast3sthanhhoa.com/wp-content/uploads/2021/01/z3665740074673_b6356c597a68e036a96fa923b4da3e3a.jpg", // Replace with valid VF9 image URL
     price: "$115,000",
     installment: "$1,650/month",
     model: "Vinfast VF9 Max",
     mileage: "6,000 km",
     owners: "1 Owner",
-    color: "white",
+    color: "green",
     yearlyCost: "$15,000/yr",
     registrationDate: "10 Oct 22",
     yearsLeft: "9yrs left",
@@ -479,16 +547,23 @@ export const oldCars = [
       </ul>
       <p>💲 <strong>Price:</strong> $115,000</p>
     </div>`,
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
+    ],
   },
   {
     id: "vinfast-vf6-3",
-    imageUrl: "https://vinfastauto.com/storage/app/media/model/vf6-gray.jpg", // Replace with valid VF6 image URL
+    imageUrl:
+      "https://vinfast3sthanhhoa.com/wp-content/uploads/2023/09/vf6-mau-trang-1-1110x1032-600x600-1.jpg", // Replace with valid VF6 image URL
     price: "$42,000",
     installment: "$620/month",
     model: "Vinfast VF6 Limited",
     mileage: "12,500 km",
     owners: "1 Owner",
-    color: "grey",
+    color: "white",
     yearlyCost: "$9,500/yr",
     registrationDate: "05 Jan 21",
     yearsLeft: "6yrs left",
@@ -506,6 +581,12 @@ export const oldCars = [
       { key: "Downpayment", value: "$12,000" },
       { key: "Seats", value: "5" },
       { key: "Horse Power", value: "140 kW (187 bhp)" },
+    ],
+    images: [
+      "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4103647174185_bc24ea6b0c06d6cb996c324d11dc1146.jpg",
+      "https://images2.thanhnien.vn/528068263637045248/2024/4/30/vf-8-3-1714454647486958411350.jpg",
+      "https://d2ntlhuhxqnrio.cloudfront.net/wp-content/uploads/2023/07/mau-xe-vf8-5.png",
+      "https://vinfastquangninh.com.vn/wp-content/uploads/2022/01/noi-that-e35_4-1200x800.jpg",
     ],
     description: `<div>
       <h2>For Sale: Vinfast VF6 – The Ultimate Compact Electric SUV!</h2>
