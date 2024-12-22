@@ -7,6 +7,7 @@ import { oldCars } from "../../helpers/data";
 import { old_new } from "../../assets";
 import MainFilter from "../../components/MainFilter";
 import { filterCars } from "../../helpers/utils";
+import { InterestedForm } from "../../components/InterestForm";
 
 const images = [
   old_new,
@@ -15,18 +16,31 @@ const images = [
 
 function Home() {
   const [filter, setFilter] = useState({});
+  const [searchKey, setSeachKey] = useState<string>("");
   const handleOnChange = (value) => {
     setFilter(value);
   };
-  const data = useCallback(() => filterCars(oldCars, filter), [filter]);
+  const data = useCallback(() => {
+    return filterCars(oldCars, filter, searchKey);
+  }, [filter, searchKey]);
   return (
     <>
       <Banner images={images} />
       <div style={{ backgroundColor: "#fff", marginTop: 4 }}>
-        <Input placeholder="Search" leftSection={<IconSearch stroke={2} />} />
+        <Input
+          placeholder="Search"
+          leftSection={<IconSearch stroke={2} />}
+          onChange={(event) => {
+            setSeachKey(event.target.value);
+          }}
+        />
       </div>
       <MainFilter onchange={handleOnChange} />
-      <ProductList products={data()} />
+      {data().length > 0 ? (
+        <ProductList products={data()} />
+      ) : (
+        <InterestedForm title={"Not found your interest"} />
+      )}
     </>
   );
 }

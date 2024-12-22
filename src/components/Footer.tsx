@@ -26,7 +26,7 @@ const Footer = () => {
       <div style={{ justifyItems: "center" }} className="container">
         <Grid style={{ width: "100%" }}>
           {/* Services Section */}
-          <Grid.Col span={4}>
+          <Grid.Col span={{ xs: 6, md: 4 }}>
             <Title order={5} style={{ color: "#fff", marginBottom: "10px" }}>
               SERVICES
             </Title>
@@ -53,7 +53,7 @@ const Footer = () => {
           </Grid.Col>
 
           {/* About Section */}
-          <Grid.Col span={4}>
+          <Grid.Col span={{ xs: 6, md: 4 }}>
             <Title order={5} style={{ color: "#fff", marginBottom: "10px" }}>
               ABOUT
             </Title>
@@ -100,7 +100,7 @@ const Footer = () => {
           </Grid.Col>
 
           {/* Subscribe Section */}
-          <Grid.Col span={4}>
+          <Grid.Col span={{ xs: 12, md: 4 }}>
             <Title order={5} style={{ color: "#fff", marginBottom: "10px" }}>
               SUBSCRIBE
             </Title>

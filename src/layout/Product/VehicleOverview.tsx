@@ -17,7 +17,6 @@ import {
   IconGauge,
   IconCar,
 } from "@tabler/icons-react";
-import { Z_ASCII } from "zlib";
 import ProductAttribute from "./ProductAttribute";
 
 const VehicleOverview = ({ product }) => {
@@ -25,7 +24,7 @@ const VehicleOverview = ({ product }) => {
     {
       text: " Owners",
       icon: <IconUsers size={12} />,
-      value: product.previousOwners,
+      value: product.previousOwners || 1,
     },
     {
       text: " Reg. Date",
@@ -33,19 +32,19 @@ const VehicleOverview = ({ product }) => {
       value: product.registrationDate,
     },
     {
-      text: " COE Left",
+      text: " Color",
       icon: <IconClock size={12} />,
-      value: product.coeLeft,
+      value: product.color,
     },
     {
       text: " Depreciation",
       icon: <IconCar size={12} />,
-      value: `${product.depreciation}/yr`,
+      value: `${product.depreciation || "$2,000"}/yr`,
     },
     {
       text: " Mileage",
       icon: <IconGauge size={12} />,
-      value: `${product.mileage} km`,
+      value: `${product.mileage}`,
     },
   ];
   return (

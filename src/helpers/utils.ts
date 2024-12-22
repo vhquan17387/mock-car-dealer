@@ -7,12 +7,30 @@ export function getPrice(num) {
 
 export const getAssetPath = (path) => `${BASE_URL}${path}`;
 
-export const filterCars = (cars, filters) => {
+export const filterCars = (cars, filters, searchKey) => {
   return cars.filter((car) => {
-    // Check Model
+    if (
+      searchKey &&
+      searchKey.length > 0 &&
+      !car.model.toLowerCase().includes(searchKey.toLowerCase())
+    ) {
+      return false;
+    }
+
     if (
       filters.Model &&
+      filters.Model.length > 0 &&
       !filters.Model.some((model) => car.model.includes(model))
+    ) {
+      // Check Model
+      return false;
+    }
+
+    // Check Color
+    if (
+      filters.Color &&
+      filters.Color.length > 0 &&
+      !filters.Color.some((color) => car.color.includes(color.toLowerCase()))
     ) {
       return false;
     }
@@ -21,7 +39,11 @@ export const filterCars = (cars, filters) => {
     const seats = car.productAttributes.find(
       (attr) => attr.key === "Seats"
     )?.value;
-    if (filters.Seat && !filters.Seat.includes(seats)) {
+    if (
+      filters.Seat &&
+      filters.Seat.length > 0 &&
+      !filters.Seat.includes(seats)
+    ) {
       return false;
     }
 
@@ -29,7 +51,11 @@ export const filterCars = (cars, filters) => {
     const fuelType = car.productAttributes.find(
       (attr) => attr.key === "Fuel Type"
     )?.value;
-    if (filters.FuelType && !filters.FuelType.includes(fuelType)) {
+    if (
+      filters["Fuel Type"] &&
+      filters["Fuel Type"].length > 0 &&
+      !filters["Fuel Type"].includes(fuelType)
+    ) {
       return false;
     }
 

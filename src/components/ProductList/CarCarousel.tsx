@@ -5,28 +5,27 @@ import { oldCars } from "../../helpers/data";
 
 const CarCarousel = () => {
   return (
-    <Stack align="center" style={{ width: "100%" }}>
+    <Stack align="center" style={{ width: "100%", maxWidth: "1200px" }}>
       <Text size="xl" fw={500}>
         Still Can't Decide? You May Also Like These!
       </Text>
       <Carousel
-        slideSize="33.333%"
+        slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
         slideGap="md"
         loop
         align="start"
         withIndicators
         controlsOffset="xs"
-        nextControlLabel="Next"
-        previousControlLabel="Previous"
+        style={{ width: "100%", maxWidth: "1200px" }}
       >
-        {oldCars.map((car, index) => (
+        {oldCars.slice(0, 4).map((car, index) => (
           <Carousel.Slide key={index}>
             <Card shadow="sm" padding="lg" radius="md" withBorder>
               <Card.Section>
                 <Image
-                  src={car.image}
+                  src={car.imageUrl}
                   height={160}
-                  alt={car.name}
+                  alt={car.model}
                   fit="contain"
                 />
               </Card.Section>
@@ -34,18 +33,13 @@ const CarCarousel = () => {
                 <Text fw={500} size="lg">
                   {car.price}
                 </Text>
-                <Badge color="orange" size="lg">
-                  {car.installment}
-                </Badge>
               </Group>
               <Text size="sm" color="dimmed">
-                {car.name}
+                {car.model}
               </Text>
               <Stack gap={4} mt="sm">
                 <Text size="xs">📏 {car.mileage}</Text>
                 <Text size="xs">👥 {car.owners}</Text>
-                <Text size="xs">🚗 {car.roadTax}</Text>
-                <Text size="xs">📅 {car.date}</Text>
               </Stack>
               <Button fullWidth variant="light" color="orange" mt="md">
                 View Details
