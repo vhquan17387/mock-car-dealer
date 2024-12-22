@@ -1,12 +1,12 @@
 import React from "react";
-import MenuList from './MenuList';
 
 import s from "./Nav.module.css";
+import MenuList from "./MenuList";
 
 export default function NavMenu() {
   return (
     <div className={s.menu}>
-      <MenuList />
+      <MenuList mob={true} />
     </div>
   );
 }

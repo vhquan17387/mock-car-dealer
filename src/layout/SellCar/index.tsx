@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Text,
@@ -11,102 +11,77 @@ import {
   Box,
   Image,
   Card,
+  Radio,
+  Stack,
 } from "@mantine/core";
 import { sellcar } from "../../assets";
-import CarDetailsCard from "../../components/Product/CarDetailsCard";
 import CarDetailsForm from "./CarDetailsForm";
+const data = [
+  {
+    name: "Within 1 months",
+  },
+  {
+    name: "Within 3 months",
+  },
+  {
+    name: "Within 6 months",
+  },
+];
 
 function SellCar() {
+  const [value, setValue] = useState<string | null>(null);
+  const [filter, setFilter] = useState({});
   return (
-    <Container style={{ marginTop: "20px" }}>
-      {/* Header Section */}
-      {/* <Grid align="center" gutter="lg">
-        <Grid.Col span={8}>
-          <Title order={2} style={{ color: "#333333", marginBottom: "10px" }}>
-            Let us help you sell your car!
-          </Title>
-          <Text size="sm" color="dimmed" style={{ marginBottom: "20px" }}>
-            We’ll get you the best quote, either from us or our trusted pool of
-            500+ dealer partners.
-          </Text>
-          <Group gap="xl">
-            <Box style={{ textAlign: "center" }}>
-              <Text size="xl" style={{ color: "#FF5722" }}>
-                ⚡
-              </Text>
-              <Text size="sm">Sell your car within 24 hours</Text>
-            </Box>
-            <Box style={{ textAlign: "center" }}>
-              <Text size="xl" style={{ color: "#FF5722" }}>
-                💰
-              </Text>
-              <Text size="sm">
-                Earn up to $5,000 more as compared to selling elsewhere
-              </Text>
-            </Box>
-            <Box style={{ textAlign: "center" }}>
-              <Text size="xl" style={{ color: "#FF5722" }}>
-                ✔️
-              </Text>
-              <Text size="sm">We’ll handle your paperwork for free</Text>
-            </Box>
-          </Group>
-        </Grid.Col>
-        <Grid.Col span={4}>
-          <Image
-            src="https://via.placeholder.com/300" // Replace with actual image
-            alt="Car"
-            radius="md"
-            style={{ border: "1px solid #e0e0e0" }} // Light border for the image
-          />
-        </Grid.Col>
-      </Grid> */}
+    <Container
+      style={{
+        marginTop: "20px",
+        justifyItems: "center",
+      }}
+    >
       <Image src={sellcar} />
       <Divider my="xl" />
 
-      <Card shadow="sm" padding="lg" radius="md" withBorder>
+      <Card
+        shadow="sm"
+        padding="lg"
+        radius="md"
+        withBorder
+        style={{
+          marginBottom: "20px",
+          width: "100%",
+        }}
+      >
         <Box
           style={{
             marginBottom: "20px",
+            width: "100%",
           }}
         >
-          <Text size="md" style={{ marginBottom: "10px" }}>
+          <Text size="md" style={{ marginBottom: "10px" }} ta="center">
             When do you plan to sell?
           </Text>
-          <Group gap="md">
-            <Button
-              variant="outline"
-              color="gray"
-              style={{
-                flex: 1,
-                color: "#333",
-                borderColor: "#ddd",
-              }}
-            >
-              Within 3 months
-            </Button>
-            <Button
-              variant="outline"
-              color="gray"
-              style={{
-                flex: 1,
-                color: "#333",
-                borderColor: "#ddd",
-              }}
-            >
-              Within 6 months
-            </Button>
-            <Button
-              variant="filled"
-              color="orange"
-              style={{
-                flex: 1,
-                backgroundColor: "#FF5722",
-                borderColor: "#FF5722",
-              }}
-            >
-              Just looking around
-            </Button>
+          <Group gap="md" justify="center">
+            <Radio.Group value={value} onChange={setValue}>
+              <Grid pt="md" gutter="xs" grow>
+                {data.map((item) => (
+                  <Grid.Col span={3}>
+                    <Radio.Card radius="md" value={item.name} key={item.name}>
+                      <Group wrap="nowrap" align="flex-start">
+                        <Button
+                          variant={value === item.name ? "filled" : "outline"}
+                          color={value === item.name ? "orange" : "gray"}
+                          style={{
+                            flex: 1,
+                          }}
+                        >
+                          {item.name}
+                        </Button>
+                      </Group>
+                    </Radio.Card>
+                  </Grid.Col>
+                ))}
+              </Grid>
+            </Radio.Group>
           </Group>
         </Box>
 
@@ -137,7 +112,9 @@ function SellCar() {
             borderColor: "#ddd",
           }}
         />
-
+      </Card>
+      <CarDetailsForm />
+      <div style={{ width: "90%" }}>
         <Text size="xs" color="dimmed" style={{ margin: "20px 0" }}>
           By clicking “Submit”, I agree to be contacted by OneShift and its
           partners regarding the transaction of my vehicle, in accordance to
@@ -159,8 +136,7 @@ function SellCar() {
         >
           Submit
         </Button>
-      </Card>
-      <CarDetailsForm />
+      </div>
     </Container>
   );
 }

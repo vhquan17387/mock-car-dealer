@@ -63,7 +63,7 @@ function CarDetailsForm() {
         Car Details Input Form
       </Title>
       <Grid>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="id"
             placeholder="Car ID"
@@ -72,16 +72,7 @@ function CarDetailsForm() {
             onChange={handleInputChange}
           />
         </Grid.Col>
-        <Grid.Col span={6}>
-          <Input
-            name="imageUrl"
-            placeholder="Image URL"
-            label="Image URL"
-            value={formData.imageUrl}
-            onChange={handleInputChange}
-          />
-        </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="price"
             placeholder="Price"
@@ -90,7 +81,7 @@ function CarDetailsForm() {
             onChange={handleInputChange}
           />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="installment"
             placeholder="Installment"
@@ -99,7 +90,7 @@ function CarDetailsForm() {
             onChange={handleInputChange}
           />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="model"
             placeholder="Model"
@@ -108,7 +99,7 @@ function CarDetailsForm() {
             onChange={handleInputChange}
           />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="mileage"
             placeholder="Mileage"
@@ -117,7 +108,7 @@ function CarDetailsForm() {
             onChange={handleInputChange}
           />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="owners"
             placeholder="Owners"
@@ -126,7 +117,7 @@ function CarDetailsForm() {
             onChange={handleInputChange}
           />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="yearlyCost"
             placeholder="Yearly Cost"
@@ -135,7 +126,7 @@ function CarDetailsForm() {
             onChange={handleInputChange}
           />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="registrationDate"
             placeholder="Registration Date"
@@ -144,7 +135,7 @@ function CarDetailsForm() {
             onChange={handleInputChange}
           />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="yearsLeft"
             placeholder="Years Left"
@@ -153,7 +144,7 @@ function CarDetailsForm() {
             onChange={handleInputChange}
           />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
             name="certification"
             placeholder="Certification"
@@ -173,8 +164,8 @@ function CarDetailsForm() {
         Product Attributes
       </Title>
       {formData.productAttributes.map((attribute, index) => (
-        <Grid key={index}>
-          <Grid.Col span={6}>
+        <Grid key={index} gutter={"xs"}>
+          <Grid.Col span={6} mb={"xs"}>
             <Input
               placeholder="Attribute Key"
               value={attribute.key}
