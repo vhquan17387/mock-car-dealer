@@ -30,7 +30,25 @@ const data = [
 
 function SellCar() {
   const [value, setValue] = useState<string | null>(null);
-  const [filter, setFilter] = useState({});
+  const [formData, setFormData] = useState({
+    id: "",
+    imageUrl: "",
+    price: "",
+    installment: "",
+    model: "",
+    mileage: "",
+    owners: "",
+    yearlyCost: "",
+    registrationDate: "",
+    yearsLeft: "",
+    certification: "",
+    productAttributes: [],
+    description: "",
+    categories: [],
+  });
+  const handleSubmit = () => {
+    console.log("formsubmitted", formData);
+  };
   return (
     <Container
       style={{
@@ -86,15 +104,6 @@ function SellCar() {
         </Box>
 
         <Input
-          placeholder="Your car plate number"
-          size="md"
-          style={{
-            marginBottom: "10px",
-            backgroundColor: "#ffffff",
-            borderColor: "#ddd",
-          }}
-        />
-        <Input
           placeholder="Your name"
           size="md"
           style={{
@@ -112,14 +121,24 @@ function SellCar() {
             borderColor: "#ddd",
           }}
         />
+        <Input
+          placeholder="Your email address"
+          size="md"
+          style={{
+            marginBottom: "10px",
+            backgroundColor: "#ffffff",
+            borderColor: "#ddd",
+          }}
+        />
+        <CarDetailsForm defaultData={formData} setData={setFormData} />
       </Card>
-      <CarDetailsForm />
+
       <div style={{ width: "90%" }}>
         <Text size="xs" color="dimmed" style={{ margin: "20px 0" }}>
           By clicking “Submit”, I agree to be contacted by OneShift and its
           partners regarding the transaction of my vehicle, in accordance to
           OneShift’s{" "}
-          <Text component="a" href="#" size="xs" color="orange" underline>
+          <Text component="a" href="#" size="xs" color="orange">
             Privacy Policy
           </Text>
           .
@@ -133,6 +152,7 @@ function SellCar() {
             borderColor: "#FF5722",
             color: "#ffffff",
           }}
+          onClick={handleSubmit}
         >
           Submit
         </Button>

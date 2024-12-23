@@ -59,6 +59,7 @@ const FilterPopover = (props) => {
   return (
     <>
       <Popover
+        key={"popover" + item.key}
         opened={opened}
         onClose={() => setOpened(false)}
         closeOnClickOutside={true}
@@ -95,7 +96,7 @@ const FilterPopover = (props) => {
             <SimpleGrid cols={2} spacing="xs" mb="md">
               {item.value.map((promotion, index) => (
                 <Badge
-                  key={index}
+                  key={`${promotion}-${index}`}
                   variant={isItemSelected(promotion) ? "filled" : "light"}
                   size="sm"
                   color={isItemSelected(promotion) ? "orange" : "gray"}
@@ -135,6 +136,7 @@ const RangeFilter = (props) => {
   const { range, setRange, min, max, step } = props;
   return [
     <RangeSlider
+      key={"rangeSlider"}
       value={range}
       onChange={setRange}
       min={min}
@@ -152,7 +154,7 @@ const RangeFilter = (props) => {
         track: { backgroundColor: "#f5f5f5" },
       }}
     />,
-    <Group gap="xs" mb="md">
+    <Group gap="xs" mb="md" key="sliderInput">
       <NumberInput
         value={range[0]}
         onChange={(value) => setRange([value || min, range[1]])}

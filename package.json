@@ -16,10 +16,13 @@
   "dependencies": {
     "@mantine/carousel": "^7.15.1",
     "@mantine/core": "^7.15.1",
+    "@mantine/dates": "^7.15.1",
+    "@mantine/dropzone": "^7.15.1",
     "@mantine/hooks": "^7.15.1",
     "@mantine/modals": "^7.15.1",
     "@mantine/spotlight": "^7.15.1",
     "@mantine/tiptap": "^7.15.1",
+    "@microsoft/clarity": "^1.0.0",
     "@tabler/icons-react": "^3.26.0",
     "@tiptap/extension-link": "^2.10.4",
     "@tiptap/pm": "^2.10.4",

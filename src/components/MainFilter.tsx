@@ -109,6 +109,7 @@ const MainFilter = ({ onchange }) => {
       <Group gap="xs" visibleFrom="sm">
         {filterOptions.map((item) => (
           <FilterPopover
+            key={item.key}
             type={item.type}
             item={item}
             size="sm"
@@ -117,7 +118,6 @@ const MainFilter = ({ onchange }) => {
             }
             text={item}
             isSelected={isSelected(item.key)}
-            {...item}
           />
         ))}
       </Group>

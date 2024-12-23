@@ -117,7 +117,7 @@ const FilterDrawer = ({ filterOptions, filter: currentFilter, onApply }) => {
             Clear All
           </Text>
           {Object.entries(selected)
-            .filter(([key, value]) => value.length > 0)
+            .filter(([_, value]) => value.length > 0)
             .map(([key, value]) => {
               // Normalize the value to always be an array for iteration
               // const data = Array.isArray(value) ? value : [value];
@@ -156,20 +156,29 @@ const FilterDrawer = ({ filterOptions, filter: currentFilter, onApply }) => {
         <Tabs defaultValue="Color" orientation="vertical">
           <Tabs.List>
             {filterOptions.map((item) => {
-              return <Tabs.Tab value={item.key}>{item.key}</Tabs.Tab>;
+              return (
+                <Tabs.Tab key={item.key} value={item.key}>
+                  {item.key}
+                </Tabs.Tab>
+              );
             })}
           </Tabs.List>
 
           {filterOptions.map((item) => {
             return (
               <Tabs.Panel
+                key={item.key}
                 value={item.key}
                 pt="md"
                 style={{ overflowY: "auto" }}
               >
                 <Grid gutter="xs" mb="md">
                   {item.value.map((promotion, index) => (
-                    <Grid.Col span={{ xs: 6 }} ta={"center"}>
+                    <Grid.Col
+                      key={`${promotion}-${index}`}
+                      span={{ xs: 6 }}
+                      ta={"center"}
+                    >
                       <Badge
                         key={index}
                         variant={

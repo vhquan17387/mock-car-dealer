@@ -1,38 +1,33 @@
-import React, { useState } from "react";
 import {
-  Container,
+  Autocomplete,
+  Button,
+  Card,
+  Divider,
   Grid,
   Input,
-  Textarea,
-  Text,
+  TagsInput,
   Title,
-  Group,
-  Button,
-  Divider,
-  Box,
-  List,
-  Card,
 } from "@mantine/core";
+import { DateInput } from "@mantine/dates";
+import React, { useEffect, useState } from "react";
 import { RichTex } from "../../components/RichText";
-
-function CarDetailsForm() {
-  // State to store form data
-  const [formData, setFormData] = useState({
-    id: "",
-    imageUrl: "",
-    price: "",
-    installment: "",
-    model: "",
-    mileage: "",
-    owners: "",
-    yearlyCost: "",
-    registrationDate: "",
-    yearsLeft: "",
-    certification: "",
-    productAttributes: [],
-    description: "",
-  });
-
+import { UploadImage } from "../../components/UploadImage";
+const models = [
+  { name: "LUX A2.0", type: "Executive Sedan" },
+  { name: "LUX SA2.0", type: "Luxury Crossover SUV" },
+  { name: "President", type: "Premium SUV with V8 Engine" },
+  { name: "Fadil", type: "Compact City Car" },
+  { name: "VF e34", type: "Subcompact SUV" },
+  { name: "VF 3", type: "Mini SUV" },
+  { name: "VF 5", type: "A-segment City SUV" },
+  { name: "VF 6", type: "Subcompact SUV" },
+  { name: "VF 7", type: "Compact SUV" },
+  { name: "VF 8", type: "Mid-size SUV" },
+  { name: "VF 9", type: "Full-size SUV" },
+  { name: "VF Wild", type: "Electric Pickup Truck (Concept)" },
+];
+function CarDetailsForm({ defaultData, setData }) {
+  const [formData, setFormData] = useState(defaultData);
   // Handler for form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -57,17 +52,20 @@ function CarDetailsForm() {
     setFormData({ ...formData, productAttributes: updatedAttributes });
   };
 
+  useEffect(() => {
+    setData(formData);
+  }, [formData]);
+
   return (
-    <Card size="lg" style={{ padding: "20px" }}>
-      <Title order={2} mb="md">
-        Car Details Input Form
+    <div>
+      <Title order={2} mb="md" mt={"md"}>
+        Car Details
       </Title>
       <Grid>
         <Grid.Col span={{ base: 12, md: 6 }}>
           <Input
-            name="id"
-            placeholder="Car ID"
-            label="Car ID"
+            name="carId"
+            placeholder="Your car plate number"
             value={formData.id}
             onChange={handleInputChange}
           />
@@ -76,25 +74,16 @@ function CarDetailsForm() {
           <Input
             name="price"
             placeholder="Price"
-            label="Price"
             value={formData.price}
             onChange={handleInputChange}
           />
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 6 }}>
-          <Input
-            name="installment"
-            placeholder="Installment"
-            label="Installment"
-            value={formData.installment}
-            onChange={handleInputChange}
-          />
-        </Grid.Col>
-        <Grid.Col span={{ base: 12, md: 6 }}>
-          <Input
+          <Autocomplete
+            placeholder="What is your car model"
+            data={models.map((item) => item.name)}
+            comboboxProps={{ shadow: "md" }}
             name="model"
-            placeholder="Model"
-            label="Model"
             value={formData.model}
             onChange={handleInputChange}
           />
@@ -103,58 +92,26 @@ function CarDetailsForm() {
           <Input
             name="mileage"
             placeholder="Mileage"
-            label="Mileage"
             value={formData.mileage}
             onChange={handleInputChange}
           />
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 6 }}>
-          <Input
-            name="owners"
-            placeholder="Owners"
-            label="Owners"
+          <DateInput
+            name="registrationDate"
+            placeholder="Registration Date"
             value={formData.owners}
             onChange={handleInputChange}
           />
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 6 }}>
-          <Input
-            name="yearlyCost"
-            placeholder="Yearly Cost"
-            label="Yearly Cost"
-            value={formData.yearlyCost}
-            onChange={handleInputChange}
-          />
-        </Grid.Col>
-        <Grid.Col span={{ base: 12, md: 6 }}>
-          <Input
-            name="registrationDate"
-            placeholder="Registration Date"
-            label="Registration Date"
-            value={formData.registrationDate}
-            onChange={handleInputChange}
-          />
-        </Grid.Col>
-        <Grid.Col span={{ base: 12, md: 6 }}>
-          <Input
-            name="yearsLeft"
-            placeholder="Years Left"
-            label="Years Left"
-            value={formData.yearsLeft}
-            onChange={handleInputChange}
-          />
-        </Grid.Col>
-        <Grid.Col span={{ base: 12, md: 6 }}>
-          <Input
-            name="certification"
-            placeholder="Certification"
-            label="Certification"
-            value={formData.certification}
-            onChange={handleInputChange}
-          />
+          <TagsInput placeholder="Enter tag" />
         </Grid.Col>
         <Grid.Col span={12}>
           <RichTex value="" onChange={() => {}} />
+        </Grid.Col>
+        <Grid.Col span={12}>
+          <UploadImage />
         </Grid.Col>
       </Grid>
 
@@ -188,7 +145,7 @@ function CarDetailsForm() {
       <Button variant="outline" mt="md" onClick={addProductAttribute}>
         Add Attribute
       </Button>
-    </Card>
+    </div>
   );
 }
 
